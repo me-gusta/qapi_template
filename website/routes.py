@@ -1,3 +1,4 @@
+import json
 import re
 from pathlib import Path
 from random import shuffle
@@ -30,6 +31,7 @@ def build_menu():
         except KeyError:
             items = sub_menu[ent(sub_category)] = []
         items.append(ent)
+    print(menu)
     return menu
 
 

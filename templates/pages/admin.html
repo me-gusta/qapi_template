@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/static/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>WEB EDIT</title>
+    <link href="/static/admin/static/bootstrap.css" rel="stylesheet">
+    <link href="/static/admin/static/app.css" rel="stylesheet">
+    <script>
+        window.endpoint = '{{ url }}/qapi/'
+        window.categoryColors = JSON.parse('{{ category_colors|safe }}')
+    </script>
+  <script type="module" crossorigin src="/static/admin/assets/index-4cfc802c.js"></script>
+  <link rel="stylesheet" href="/static/admin/assets/index-a0044689.css">
+</head>
+<body>
+<div id="app"></div>
+
+</body>
+</html>

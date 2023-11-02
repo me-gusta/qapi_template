@@ -23,4 +23,4 @@ except ImportError:
 
 
 from website.routes import *
-from website.routes_admin import *
+from website.admin_routes import *

@@ -47,6 +47,7 @@ def translate_to_rulorem(text):
 def gen_md_text():
     def random_mark():
         return choice(['.', '!', '?'])
+
     sentences = translate_to_rulorem(lorem.text()).split('. ')
     sentences[-1] = sentences[-1][:-1]  # remove a dot at the end
 
@@ -72,8 +73,8 @@ def main():
         "slug": "",
         "title": "",
         "description": "",
-        "category": choice(bits_category),
-        "sub_category": choice(bits_sub_category),
+        "category": "",
+        "sub_category": "",
         "order": c_order,
     }
 
@@ -83,6 +84,10 @@ def main():
         ent['title'] = name
         ent['slug'] = make_slug(ent['title'])
         ent['description'] = translate_to_rulorem(lorem.paragraph())
+
+        ent['category'] = choice(bits_category)
+        ent['sub_category'] = choice(bits_sub_category)
+
         if i == 0:
             ent['path'] = '/'
             ent['template'] = 'index'

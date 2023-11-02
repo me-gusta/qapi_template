@@ -6,7 +6,7 @@ def create_admin_views():
         {
             'title': 'main',
             'query': [slug, title, category, sub_category, order],
-            'sort': [(category, 1), (order, 1)]
+            'sort': [(category, 1), (sub_category, 1), (order, 1)]
         },
     ]
 
@@ -28,3 +28,6 @@ def create_admin_views():
 
 
 admin_views = create_admin_views()
+category_colors = {
+    'Category1': 'rgba(124, 124, 2, 0.5)'
+}

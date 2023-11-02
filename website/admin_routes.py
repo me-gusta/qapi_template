@@ -1,3 +1,4 @@
+import json
 from hashlib import sha256
 
 from bson import ObjectId
@@ -6,8 +7,9 @@ from flask_cors import cross_origin
 from flask_login import login_required, login_user
 
 from server import app, csrf
-from website.admin_settings import admin_views
+from website.admin_settings import admin_views, category_colors
 from website.authentication import user, is_authenticated
+from website.constants import DOMAIN
 from website.qapi.component import Component
 from website.qapi.database import db
 from website.qapi.queries import my_query_to_mongodb, clear_cache
@@ -20,11 +22,12 @@ def make_hash(s: str) -> str:
 @app.route("/qapi/admin", methods=['GET', 'POST'])
 def admin_page():
     context = {
-        'url': 'http://91.142.74.196/'
+        'url': DOMAIN,
+        'category_colors': json.dumps(category_colors, ensure_ascii=False)
     }
 
     if app.debug:
-        context['url'] = 'http://127.0.0.1:5000/'
+        context['url'] = 'http://127.0.0.1:5000'
         login_user(user)
 
     if is_authenticated():
