@@ -113,7 +113,7 @@ def article_view(slug: str):
 
     context = build_context(slug)
 
-    return render_template('pages/index.html', **context)
+    return render_template('pages/article.html', **context)
 
 
 def send_email(text: str):
