@@ -34,7 +34,7 @@ def build_menu():
 
 
 def build_general_context():
-    articles = query_many(slug, title)
+    articles = query_many(slug, title, description)
     shuffle(articles)
     return {
                'menu': build_menu(),
